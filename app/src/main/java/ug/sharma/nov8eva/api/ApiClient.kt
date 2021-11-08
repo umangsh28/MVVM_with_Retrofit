@@ -10,7 +10,7 @@ interface ApiClient {
 
     //https://newsapi.org/v2/everything?q=tesla&from=2021-11-08&sortBy=popularity&apiKey=96680e34cd074094889957f64535496d
 
-    @GET("v2/everything")
+    @GET("v2/everything?q=tesla&from=2021-11-08&sortBy=popularity&apiKey=96680e34cd074094889957f64535496d")
     fun getDataByApi(@Query("q") sq:String):Observable<ResponseDTO>
 
 
