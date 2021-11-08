@@ -66,5 +66,6 @@ class MainActivity : AppCompatActivity(),NewsListener{
         intent.putExtra("title",article.title)
         intent.putExtra("desc",article.description)
         startActivity(intent)
+
     }
 }

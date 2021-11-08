@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_full_article.*
 
@@ -33,5 +34,19 @@ class FullArticle : AppCompatActivity() {
             var intent1= Intent(Intent.ACTION_VIEW, Uri.parse(full))
             startActivity(intent1)
         }
+
+        btnAdd.setOnClickListener {
+
+            var intent1 = Intent(this, DataStorage::class.java)
+            Toast.makeText(this,"data saved temporary",Toast.LENGTH_SHORT).show()
+
+            intent1.putExtra("img", image)
+            intent1.putExtra("title", title)
+            intent1.putExtra("desc", desc)
+            startActivity(intent1)
+        }
+
+
     }
+
 }

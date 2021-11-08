@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nov8Eva">
         <activity
+            android:name=".DataStorage"
+            android:exported="false" />
+        <activity
             android:name=".FullArticle"
             android:exported="false" />
         <activity
