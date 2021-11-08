@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(),NewsListener{
         mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
         mainViewModel.CallApiByView()
 
-        btnSearch.setOnClickListener {
+
 
             mainViewModel.liveData.observe(this, {
                 when (it) {
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(),NewsListener{
                     }
                 }
             })
-        }
+
 
     }
 
