@@ -1,5 +1,7 @@
 package ug.sharma.nov8eva
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
@@ -13,6 +15,7 @@ class FullArticle : AppCompatActivity() {
         datafromFirst()
 
 
+
     }
 
     private fun datafromFirst() {
@@ -20,9 +23,15 @@ class FullArticle : AppCompatActivity() {
         val title=intent.getStringExtra("title")
         val desc=intent.getStringExtra("desc")
 
+        val full=intent.getStringExtra("full")
+
         Glide.with(this).load(image).into(img1)
         title1.text=title.toString()
         descr1.text=desc.toString()
 
+        btnFullArticle.setOnClickListener {
+            var intent1= Intent(Intent.ACTION_VIEW, Uri.parse(full))
+            startActivity(intent1)
+        }
     }
 }

@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(),NewsListener{
         setContentView(R.layout.activity_main)
 
         mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
-        mainViewModel.CallApiByView(Tsearch.toString())
+        mainViewModel.CallApiByView()
 
         btnSearch.setOnClickListener {
 
@@ -60,8 +60,9 @@ class MainActivity : AppCompatActivity(),NewsListener{
 
     override fun onNews(article: Article, Position: Int) {
         var intent=Intent(this@MainActivity,FullArticle::class.java)
-        var intent1=Intent(Intent.ACTION_VIEW, Uri.parse(article.url))
+
         intent.putExtra("img",article.urlToImage)
+        intent.putExtra("full",article.url)
         intent.putExtra("title",article.title)
         intent.putExtra("desc",article.description)
         startActivity(intent)

@@ -23,8 +23,8 @@ class MainViewModel : ViewModel() {
 
 
 
-    fun CallApiByView(sq:String){
-        mainRepo.getDataByRepo(sq).subscribeOn(Schedulers.io())
+    fun CallApiByView(){
+        mainRepo.getDataByRepo().subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe(object : Observer<ResponseDTO>{
                 override fun onSubscribe(d: Disposable) {
                     disposable=d

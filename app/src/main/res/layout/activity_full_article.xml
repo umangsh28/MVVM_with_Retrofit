@@ -55,25 +55,26 @@
 
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:backgroundTint="#A35959"
+        android:layout_alignParentEnd="true"
         android:id="@+id/btnAdd"
-        android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
         android:text="Add To Read Later"
+        android:textSize="13dp"
         />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/btnFullArticle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#A35959"
-        android:id="@+id/btnAdd"
         android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:text="Add To Read Later"
-        />
+        android:layout_gravity="center_vertical"
+        android:layout_margin="12dp"
+        android:backgroundTint="#A35959"
+        android:text=" Read Full article"
+        android:textSize="13dp" />
 
 </RelativeLayout>

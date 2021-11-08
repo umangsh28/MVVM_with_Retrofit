@@ -7,7 +7,7 @@ import ug.sharma.nov8eva.network.network
 class RepoDataBase {
 
 
-//    fun addData(sq:String): Call<ResponseDTO>{
-//        return  network.getDataByNetwork().getDataByApi(sq)
-//    }
+    fun addData(): Call<ResponseDTO>{
+        return  network.getDataByNetwork().getDataByBase()
+    }
 }

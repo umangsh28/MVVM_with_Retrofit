@@ -8,25 +8,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Search Breaking News"
+        android:hint="News Breeze"
+        android:gravity="center"
+        android:textSize="23dp"
         android:textColorHint="@color/white"
         android:id="@+id/Tsearch"
         />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="#A35959"
-        android:id="@+id/btnSearch"
-        android:text="Search"
-        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:id="@+id/recycler"
         />
 

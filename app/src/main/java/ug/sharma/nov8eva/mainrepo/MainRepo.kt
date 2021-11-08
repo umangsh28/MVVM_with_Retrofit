@@ -6,7 +6,7 @@ import ug.sharma.nov8eva.network.network
 
 class MainRepo {
 
-    fun getDataByRepo(sq:String):Observable<ResponseDTO>{
-        return network.getDataByNetwork().getDataByApi(sq)
+    fun getDataByRepo():Observable<ResponseDTO>{
+        return network.getDataByNetwork().getDataByApi()
     }
 }
