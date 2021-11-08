@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#A35959"
-        android:id="@+id/button"
+        android:id="@+id/btnSearch"
         android:text="Search"
         />
 
@@ -29,6 +29,8 @@
         android:layout_height="match_parent"
         android:id="@+id/recycler"
         />
+
+
 
 
 
