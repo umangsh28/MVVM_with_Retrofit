@@ -10,6 +10,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 import ug.sharma.nov8eva.mainrepo.MainRepo
 import ug.sharma.nov8eva.mainuimodel.MainUiModel
 import ug.sharma.nov8eva.model.ResponseDTO
+import java.util.*
 
 class MainViewModel : ViewModel() {
 
@@ -22,8 +23,8 @@ class MainViewModel : ViewModel() {
 
 
 
-    fun CallApiByView(){
-        mainRepo.getDataByRepo("tesla").subscribeOn(Schedulers.io())
+    fun CallApiByView(sq:String){
+        mainRepo.getDataByRepo(sq).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread()).subscribe(object : Observer<ResponseDTO>{
                 override fun onSubscribe(d: Disposable) {
                     disposable=d

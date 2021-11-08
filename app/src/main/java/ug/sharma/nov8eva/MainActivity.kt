@@ -1,8 +1,10 @@
 package ug.sharma.nov8eva
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract.Intents.Insert.ACTION
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity(),NewsListener{
 
     private lateinit var mainViewModel: MainViewModel
 
+
     private var list=emptyList<Article>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,20 +30,23 @@ class MainActivity : AppCompatActivity(),NewsListener{
         setContentView(R.layout.activity_main)
 
         mainViewModel=ViewModelProvider(this).get(MainViewModel::class.java)
-        mainViewModel.CallApiByView()
+        mainViewModel.CallApiByView(Tsearch.toString())
 
-        mainViewModel.liveData.observe(this,{
-            when(it){
-                is MainUiModel.onSucess -> {
-                    list=it.responseDTO.articles
-                    setrecycler()
-                }
+        btnSearch.setOnClickListener {
 
-                is MainUiModel.onError ->{
-                    Log.d("umang",it.error)
+            mainViewModel.liveData.observe(this, {
+                when (it) {
+                    is MainUiModel.onSucess -> {
+                        list = it.responseDTO.articles
+                        setrecycler()
+                    }
+
+                    is MainUiModel.onError -> {
+                        Log.d("umang", it.error)
+                    }
                 }
-            }
-        })
+            })
+        }
 
     }
 
@@ -54,6 +60,7 @@ class MainActivity : AppCompatActivity(),NewsListener{
 
     override fun onNews(article: Article, Position: Int) {
         var intent=Intent(this@MainActivity,FullArticle::class.java)
+        var intent1=Intent(Intent.ACTION_VIEW, Uri.parse(article.url))
         intent.putExtra("img",article.urlToImage)
         intent.putExtra("title",article.title)
         intent.putExtra("desc",article.description)

@@ -57,7 +57,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#A35959"
+        android:id="@+id/btnAdd"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Add To Read Later"
+        />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#A35959"
         android:id="@+id/btnAdd"
