@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#A35959"
+    android:background="#8C3030"
     tools:context=".FullArticle">
 
 
@@ -26,9 +26,17 @@
         android:layout_below="@id/img1"
         android:text="title"
         android:textStyle="bold"
-        android:textSize="23dp"
+        android:textSize="20dp"
         android:gravity="center"
         />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scroll1"
+        android:layout_below="@id/title1"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        >
 
 
     <TextView
@@ -37,18 +45,21 @@
         android:id="@+id/descr1"
         android:layout_margin="9dp"
         android:textColor="@color/white"
-        android:layout_below="@id/title1"
+        android:layout_below="@id/scroll1"
+        android:textStyle="italic"
         android:text="Description"
-        android:textSize="43dp"
+        android:textSize="35dp"
         />
+    </androidx.core.widget.NestedScrollView>
 
 
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
-        android:backgroundTint="#773333"
+        android:backgroundTint="#A35959"
         android:id="@+id/btnAdd"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
