@@ -5,15 +5,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.Glide.init
-import org.w3c.dom.Text
 import ug.sharma.nov8eva.R
+import ug.sharma.nov8eva.listener.NewsListener
 import ug.sharma.nov8eva.model.Article
 
-class Holderr(var itemView: View) : RecyclerView.ViewHolder(itemView) {
+class Holderr(var itemView: View,val clicklistener:NewsListener) : RecyclerView.ViewHolder(itemView) {
 
 
-    fun setdata(article: Article) {
+    fun setdata(article: Article,pos:Int) {
 
         val image = itemView.findViewById<ImageView>(R.id.img)
         val title = itemView.findViewById<TextView>(R.id.title)
@@ -25,5 +24,9 @@ class Holderr(var itemView: View) : RecyclerView.ViewHolder(itemView) {
         date.text=article.publishedAt
         desc.text=article.description
         Glide.with(image).load(article.urlToImage).into(image)
+
+        itemView.setOnClickListener {
+            clicklistener.onNews(article,adapterPosition)
+        }
     }
 }
